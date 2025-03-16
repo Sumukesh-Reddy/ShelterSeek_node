@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/sumukesh_traveler.css">
+    <link rel="stylesheet" href="/styles/sumukesh_room_layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</head>
+<body>
+    <!-- nav bar -->
+  <%-include ('partials/header') %>
+     
+    <!-- layout -->
+     <div id="home-details"></div>
+     <!-- help -->
+      <!-- help -->
+    <div class="help"><a href="#" ><i class="fa fa-commenting-o" aria-hidden="true" id="help-icon"></i><br><span >&nbsp;&nbsp;&nbsp;Help</span></a></div>
+   
+ 
+    <script type="module" src="/scripts/sumukesh_traveler.js"></script>
+    <script type="module" src="/scripts/sorted_houses.js"></script>
+     <script type="module" src="/scripts/sumukesh_layout.js"></script>
+     
+</body>
+<footer>
+    <%-include('partials/footer')  %>
+</footer>
+</html>

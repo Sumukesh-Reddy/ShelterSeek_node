@@ -1,0 +1,40 @@
+<!-- payment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+</head>
+<body>
+    <h1>Payment Page</h1>
+    <button id="complete-payment">Complete Payment</button>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const homeId = urlParams.get('id');
+        const checkIn = urlParams.get('checkIn');
+        const checkOut = urlParams.get('checkOut');
+
+        document.getElementById("complete-payment").addEventListener("click", function () {
+            // Simulate payment completion
+            alert("Payment completed successfully!");
+
+            // Save the booking details to localStorage
+            const booking = {
+                homeId: homeId,
+                checkIn: checkIn,
+                checkOut: checkOut,
+                paymentDate: new Date().toISOString()
+            };
+
+            let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+            bookings.push(booking);
+            localStorage.setItem("bookings", JSON.stringify(bookings));
+
+            // Redirect back to the main page or history page
+            window.location.href = "/"; // or "history.html"
+        });
+    </script>
+</body>
+</html>

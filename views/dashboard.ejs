@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Host Dashboard - ShelterSeek</title>
+    <link rel="stylesheet" href="/styles/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h1>ShelterSeek</h1>
+                <p>Host Dashboard</p>
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    Overview
+                </a>
+                <a href="#bookings" class="nav-link">
+                    <i class="fas fa-calendar"></i>
+                    Bookings
+                </a>
+                <a href="#earnings" class="nav-link">
+                    <i class="fas fa-dollar-sign"></i>
+                    Earnings
+                </a>
+                
+                <a href="#" class="nav-link logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;">Overview</h2>
+
+            <!-- Profile Section -->
+            <div class="profile-container">
+                <h1>Your Profile</h1>
+                <div class="profile-info">
+                    <div class="profile-picture">
+                        <img src="/images/photo1.jpg" alt="Profile Picture" id="profile-pic">
+                        <button id="change-profile-pic">Change Picture</button>
+                    </div>
+                    <div class="profile-details">
+                        <div class="detail">
+                            <label>Name:</label>
+                            <span id="profile-name">Loading...</span>
+                        </div>
+                        <div class="detail">
+                            <label>Email:</label>
+                            <span id="profile-email">Loading...</span>
+                        </div>
+                        <div class="detail">
+                            <label>Account Type:</label>
+                            <span id="profile-account-type">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listings Section -->
+            <div class="listings-section">
+                <h3>Your Listings</h3>
+                <div id="listings-container" class="listings-container">
+                    <!-- Listings will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Bookings Section (Hidden by Default) -->
+            <div class="bookings-section hidden">
+                <h3>Bookings per Month</h3>
+                <div class="monthly-bookings">
+                    <ul id="monthly-bookings-list">
+                        <!-- Monthly bookings will be dynamically inserted here -->
+                    </ul>
+                </div>
+                <div class="chart-container">
+                    <canvas id="bookingsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Earnings Section (Hidden by Default) -->
+            <div class="earnings-section hidden">
+                <h3>Earnings per Month</h3>
+                <div class="monthly-earnings">
+                    <ul id="monthly-earnings-list">
+                        <!-- Monthly earnings will be dynamically inserted here -->
+                    </ul>
+                </div>
+                <div class="chart-container">
+                    <canvas id="earningsChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load dashboard.js -->
+    
+    <script type="module" src="/scripts/dashboard.js"></script>
+</body>
+</html>

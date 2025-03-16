@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShelterSeek - Login</title>
+    <link rel="stylesheet" href="/styles/saistyle.css">
+    <!-- Add FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="module" src="/scripts/saiscript.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="hero-section">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Luxury apartment" class="hero-image">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h2 class="hero-title" id="heroTitle">Welcome to ShelterSeek</h2>
+                    <p class="hero-subtitle">Your gateway to exceptional stays. Whether you're a traveler seeking comfort or a host ready to welcome guests, we've got you covered.</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i style="font-size: large;" class="fas fa-check-circle"></i> 
+                            <span>Verified Properties</span>
+                        </div>
+                        <div class="feature-item">
+                            <i style="font-size: large;" class="fas fa-shield-alt"></i> 
+                            <span>Secure Booking</span>
+                        </div>
+                        <div class="feature-item">
+                            <i style="font-size: large;" class="fas fa-clock"></i> 
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div id="loginPage">
+                <h1 class="page-title">Sign in to ShelterSeek</h1>
+                
+                <div class="login-options" id="loginOptions">
+                    <button class="login-button" data-type="traveller">
+                        <div class="login-button-content">
+                            <div class="login-button-icon">
+                                <i style="font-size: large;" class="fas fa-user"></i> 
+                            </div>
+                            <div>
+                                <span class="login-button-text">Traveler Account</span>
+                                <p class="login-button-description">Book stays and manage your trips</p>
+                            </div>
+                        </div>
+                        <i style="font-size: large;" class="fas fa-chevron-right"></i> 
+                    </button>
+
+                    <button class="login-button" data-type="host">
+                        <div class="login-button-content">
+                            <div class="login-button-icon">
+                                <i style="font-size: large;" class="fas fa-building"></i> 
+                            </div>
+                            <div>
+                                <span class="login-button-text">Host Account</span>
+                                <p class="login-button-description">Manage your property and bookings</p>
+                            </div>
+                        </div>
+                        <i style="font-size: large;" class="fas fa-chevron-right"></i> 
+                    </button>
+
+                    <button class="login-button" data-type="admin">
+                        <div class="login-button-content">
+                            <div class="login-button-icon">
+                                <i style="font-size: large;" class="fas fa-shield-alt"></i> 
+                            </div>
+                            <div>
+                                <span class="login-button-text">Admin Portal</span>
+                                <p class="login-button-description">System management and oversight</p>
+                            </div>
+                        </div>
+                        <i style="font-size: large;" class="fas fa-chevron-right"></i> 
+                    </button>
+                </div>
+
+                <form class="form-container" id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail" class="form-label">Email address</label>
+                        <input type="email" id="loginEmail" required class="form-input" placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" id="loginPassword" required class="form-input" placeholder="Enter your password">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="back-button" id="loginBackButton">
+                            <i style="font-size: large;" class="fas fa-arrow-left"></i> 
+                            Back
+                        </button>
+                        <button type="submit" class="submit-button">Sign in</button>
+                    </div>
+                </form>
+
+                <div class="account-section">
+                    <span class="account-text">New to ShelterSeek?</span>
+                    <button class="account-button" id="goToRegister">
+                        <i style="font-size: large;" class="fas fa-user-plus"></i> 
+                        Create an account
+                    </button>
+                </div>
+            </div>
+
+            <div id="registerPage" class="hidden">
+                <h1 class="page-title">Create Your Account</h1>
+                
+                <form class="form-container active" id="registerForm">
+                    <div class="form-group">
+                        <label for="registerName" class="form-label">Full Name</label>
+                        <input type="text" id="registerName" required class="form-input" placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerEmail" class="form-label">Email address</label>
+                        <input type="email" id="registerEmail" required class="form-input" placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerPassword" class="form-label">Password</label>
+                        <input type="password" id="registerPassword" required class="form-input" placeholder="Create a password" minlength="8">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" id="confirmPassword" required class="form-input" placeholder="Confirm your password" minlength="8">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">I want to</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="typeTraveller" name="accountType" value="traveller" checked>
+                                <label for="typeTraveller">
+                                    <i style="font-size: large;" class="fas fa-user"></i> 
+                                    Book Stays
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="typeHost" name="accountType" value="host">
+                                <label for="typeHost">
+                                    <i style="font-size: large;" class="fas fa-building"></i> 
+                                    Host Guests
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button">Create Account</button>
+                    </div>
+                </form>
+
+                <div class="account-section">
+                    <span class="account-text">Already have an account?</span>
+                    <button class="account-button" id="goToLogin">
+                        <i style="font-size: large;" class="fas fa-sign-in-alt"></i> 
+                        Sign in
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

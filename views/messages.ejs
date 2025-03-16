@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Messages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .messages-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .message {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .message h3 {
+            margin: 0;
+            color: #d72d6e;
+        }
+        .message p {
+            margin: 5px 0;
+        }
+        .message .timestamp {
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="back()" style="
+    height: 40px; 
+    width: auto; 
+    padding: 0 20px; 
+    background-color: #d72d6e; 
+    color: white; 
+    border: none; 
+    border-radius: 8px; 
+    font-size: 16px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+"
+onmouseover="this.style.backgroundColor='#b3245a'; this.style.transform='translateY(-2px)';"
+onmouseout="this.style.backgroundColor='#d72d6e'; this.style.transform='translateY(0)';"
+onmousedown="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0, 0, 0, 0.1)';"
+onmouseup="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.1)';"
+>home</button>
+    <div class="messages-container">
+        <h1>All Messages</h1>
+        <div id="messages-list"></div>
+    </div>
+
+    <script>
+        function back(){
+            window.location.href="/";
+        }
+        const messages = JSON.parse(localStorage.getItem("messages")) || [];
+        
+        const messagesList = document.getElementById("messages-list");
+
+        if (messages.length === 0) {
+            messagesList.innerHTML = "<p>No messages found.</p>";
+        } else {
+        
+            messages.forEach((message) => {
+                const messageDiv = document.createElement("div");
+                messageDiv.classList.add("message");
+
+                messageDiv.innerHTML = `
+                    <h3>To: ${message.hostName}</h3>
+                    <p>${message.message}</p>
+                    <p class="timestamp">Sent on: ${message.timestamp}</p>
+                `;
+
+                messagesList.appendChild(messageDiv);
+            });
+        }
+    </script>
+</body>
+</html>
