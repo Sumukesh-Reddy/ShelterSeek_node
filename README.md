@@ -31,6 +31,10 @@ cd ShelterSeek_node
 ### 2️⃣ Install dependencies:
 Run the following command to install the required dependencies:
 ```sh
+npm install express ejs better-sqlite3 path
+```
+Run the following command to install the required dependencies:
+```sh
 npm install
 ```
 
