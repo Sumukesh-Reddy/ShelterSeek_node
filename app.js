@@ -53,6 +53,9 @@ app.get('/loginweb', (req, res) => {
     res.render('loginweb');
 });
 
+app.get('/contact',(req,res)=>{
+    res.render('/contact');
+})
 app.post('/loginweb', (req, res) => {
     if (req.body.type === 'signIn'){
         fetchUserByEmailPassword(req, res);
@@ -84,6 +87,17 @@ app.get('/dashboard', (req, res) => {
     res.render('dashboard');
 });
 
+app.get('/help_index',(req,res)=>{
+    res.render('help_index');
+})
+
+app.get('/ex',(req,res)=>{
+    res.render('ex');
+})
+
+app.get('/admin_index',(req,res)=>{
+    res.render('admin_index');
+});
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
